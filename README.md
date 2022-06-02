@@ -1,24 +1,56 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog app
 
-Things you may want to cover:
+A blog app build using Ruby on Rails + Postgresql
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Rails
+- PostgreSql
 
-* Configuration
+## Prerequisites  
+- PostgreSql   
+- Ruby (2.7 or newer)
+- Bundle (2.1.4 or newer)
 
-* Database creation
+## Getting Started
 
-* Database initialization
+To get a local copy follow these simple example steps.  
 
-* How to run the test suite
+1.- Clone this repository
 
-* Services (job queues, cache servers, search engines, etc.)
+2.- Install the project's dependencies by running this command:   
+`bundle install`  
+4.- Change the database configuration file (`database.yml`) to fit your local database's settings   
+5.- Start the server using this command:  
+`rails s`   
+6.- Open the browser at this address:  
+`http://127.0.0.1:3000/`   
 
-* Deployment instructions
+## Live demo
 
-* ...
+Soon to add.
+
+## Author
+
+👤 **Francisco Ponce**
+
+## Francisco's Profile
+
+- GitHub: [@franciscoPonceDev](https://github.com/franciscoPonceDev)
+- Twitter: [@franciscoPonce](https://twitter.com/franciscoPonce)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dev-ponce/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
