@@ -1,23 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Controller', type: :request do
-  describe 'Index Action' do
-    before(:each) do
-      get '/users/'
-    end
-
-    it 'Response status is correct' do
-      expect(response).to have_http_status(:ok)
-    end
+RSpec.describe 'UsersControllers', type: :request do
+  it 'Render List of users and returns correct status' do
+    get users_path
+    expect(response).to have_http_status(:ok)
+  end
+  it 'Render List of users and renders correct template' do
+    get users_path
+    expect(response).to render_template(:index)
+  end
+  it 'Render List of users and renders placeholder' do
+    get users_path
+    expect(response.body).to include('Users#index')
   end
 
-  describe 'Show Action' do
-    before(:each) do
-      get '/users/:id'
-    end
-
-    it 'Response status is correct' do
-      expect(response).to have_http_status(:ok)
-    end
+  it 'Render User info and returns correct status' do
+    get user_path(id: 1)
+    expect(response).to have_http_status(:ok)
+  end
+  it 'Render User info and renders correct template' do
+    get user_path(id: 1)
+    expect(response).to render_template(:show)
+  end
+  it 'Render User info and render placeholder' do
+    get user_path(id: 1)
+    expect(response.body).to include('Users#show')
   end
 end
