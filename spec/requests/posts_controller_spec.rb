@@ -11,7 +11,7 @@ RSpec.describe 'PostsControllers', type: :request do
   end
   it 'Renders Posts from user 1 and renders placeholder' do
     get user_posts_path(user_id: 1)
-    expect(response.body).to include('Posts#index')
+    expect(response.body).to include('List of posts')
   end
 
   it 'Renders Post #1 from user 1 and returns correct status' do
@@ -24,6 +24,6 @@ RSpec.describe 'PostsControllers', type: :request do
   end
   it 'Renders Post #1 from user 1 and renders placeholder' do
     get user_post_path(user_id: 1, id: 1)
-    expect(response.body).to include('Posts#show')
+    expect(response.body).to include('Post of user #1')
   end
 end

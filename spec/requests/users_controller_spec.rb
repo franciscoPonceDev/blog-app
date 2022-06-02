@@ -11,7 +11,7 @@ RSpec.describe 'UsersControllers', type: :request do
   end
   it 'Render List of users and renders placeholder' do
     get users_path
-    expect(response.body).to include('Users#index')
+    expect(response.body).to include('List of users')
   end
 
   it 'Render User info and returns correct status' do
@@ -24,6 +24,6 @@ RSpec.describe 'UsersControllers', type: :request do
   end
   it 'Render User info and render placeholder' do
     get user_path(id: 1)
-    expect(response.body).to include('Users#show')
+    expect(response.body).to include('This is user #1')
   end
 end
