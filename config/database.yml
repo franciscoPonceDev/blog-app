@@ -31,7 +31,7 @@ development:
   # the same name as the operating system user running Rails.
   username: postgres
 
-  # The password associated with the postgres role (username).
+  # The password associated with the postgres role (username).353
   password: 1234
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -58,6 +58,9 @@ development:
 test:
   <<: *default
   database: blog_app_test
+  username: postgres
+  password: 1234
+  port: 5433
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
