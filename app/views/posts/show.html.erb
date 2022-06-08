@@ -1,2 +1,13 @@
-<h1>Post of user #1</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post black-border">
+  <div class="post-detailed">
+    <h3> <%= @post.title %> by <%= @user.name %></h3>
+    <p>Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></p>
+  </div>
+
+  <p><%= @post.text %></p>
+</div>
+<ul class="post-comments black-border">
+  <% @post.comments.each do |comment| %>
+    <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
+  <% end %>
+</ul>
