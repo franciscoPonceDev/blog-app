@@ -1,0 +1,7 @@
+<div class='user'>
+  <img class="user-image black-border" src='<%= @users.photo %>' alt='user-photo'>
+  <div class="user-data black-border">
+    <%= link_to @users.name, user_path(id: @users.id), class: 'user-name' %>
+    <p class="user-posts">Posts: <%= @users.posts_counter || 0 %></p>
+  </div>
+</div>
