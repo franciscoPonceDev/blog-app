@@ -11,6 +11,10 @@ class Post < ApplicationRecord
     text.truncate(75)
   end
 
+  def liked?(user)
+    likes.where(user_id: user.id).any?
+  end
+
   after_save :update_post_counter
 
   private
