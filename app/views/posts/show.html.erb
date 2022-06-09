@@ -2,17 +2,17 @@
   <div class="post-detailed">
     <h3> <%= @post.title %> by <%= @user.name %></h3>
     <p>Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></p>
-    <%= form_with url: "#{@post.id}/likes", method: :post do |f| %>
-      <%= f.submit "Like" %>
-    <% end %>
   </div>
   <p><%= @post.text %></p>
-</div>
-<div class="post black-border">
-  <%= form_with url: "#{@post.id}/comments", scope: :comment, method: :post do |form| %>
-    <%= form.text_area :text, placeholder: 'Comment this post...', required: true %>
-    <%= form.submit "Add comment" %> 
+    <%= form_with url: "#{@post.id}/likes", method: :post do |form| %>
+      <%= form.submit "Like", class: 'like-btn' %>
+    <% end %>
+<div>
+  <%= form_with url: "#{@post.id}/comments", scope: :comment, method: :post, class: 'comment-form' do |form| %>
+    <%= form.text_area :text, placeholder: 'Write a comment...', required: true, class: 'comment-txt' %>
+    <%= form.submit "Add comment", class: 'comment-btn' %> 
   <% end %> 
+</div>
 </div>
 <ul class="post-comments black-border">
   <% @post.comments.each do |comment| %>
