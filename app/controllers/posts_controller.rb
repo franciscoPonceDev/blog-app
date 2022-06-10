@@ -9,8 +9,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
     @user = User.find(params[:user_id])
+    @post = Post.new
   end
 
   def create
