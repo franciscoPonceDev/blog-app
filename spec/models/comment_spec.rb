@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Validations' do
+    it 'Should increase the post comments counter' do
+      user = User.create(name: 'Jane Doe')
+      post = Post.create(title: 'Post title', user_id: user.id)
+      expect(post.comments_counter).to eq(0)
+      post.comments.create(text: 'Comment content', user_id: user.id)
+      expect(post.comments_counter).to eq(1)
+    end
+  end
 end
