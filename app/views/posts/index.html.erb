@@ -9,7 +9,7 @@
   </div>
 
   <ul class="post-comments black-border">
-    <% post.recent_comments.each do |comment| %>
+<% post.recent_comments.includes([:user]).each do |comment| %>
     <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
     <% end %>
   </ul>
