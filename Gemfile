@@ -10,6 +10,9 @@ gem 'bullet', group: 'development'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
+# Devise gem
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -59,6 +62,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Add Gem for testing
   gem 'ffi'
+  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 6.0.0.rc1'
 end
