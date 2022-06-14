@@ -13,7 +13,7 @@ gem 'rails', '~> 7.0.3'
 # Devise gem
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
-#Cancancan gem
+# Cancancan gem
 gem 'cancancan'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
