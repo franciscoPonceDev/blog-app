@@ -64,6 +64,7 @@ group :development, :test do
   gem 'ffi'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 end
 
 group :development do
