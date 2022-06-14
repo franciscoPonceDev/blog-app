@@ -10,6 +10,9 @@
     <%= form_with url: "#{@post.id}/likes", method: :post do |form| %>
       <%= form.submit "Like", class: 'like-btn' %>
     <% end %>
+    <% if can? :destroy, @post %>
+      <%= button_to 'Delete', user_post_path(@user, @post), method: :delete %>
+    <% end %>
 <div>
   <%= form_with url: "#{@post.id}/comments", scope: :comment, method: :post, class: 'comment-form' do |form| %>
     <%= form.text_area :text, placeholder: 'Write a comment...', required: true, class: 'comment-txt' %>
