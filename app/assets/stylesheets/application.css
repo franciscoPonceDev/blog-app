@@ -1,6 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
+  height: 100%;
 }
 
 .user {
@@ -162,4 +167,12 @@ body {
 
 .error {
   background-color: #d92550;
+}
+
+.devise-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
