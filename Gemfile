@@ -62,9 +62,9 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Add Gem for testing
   gem 'ffi'
+  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 6.0.0.rc1'
-  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 end
 
 group :development do
