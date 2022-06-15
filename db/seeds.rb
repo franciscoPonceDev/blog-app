@@ -11,10 +11,10 @@ User.create(name: 'Tom',
 User.create(name: 'Lilly',
             photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', bio: 'Teacher from Poland.', email: 'lilly@gmail.com', password: 'lilly12345', role: 'admin', confirmed_at: DateTime.now)
 
-Post.create(user: User.first, title: 'Hello', text: 'This is my first post')
-Post.create(user: User.first, title: 'Hello', text: 'This is my second post')
-Post.create(user: User.first, title: 'Hello', text: 'This is my third post')
-Post.create(user: User.first, title: 'Hello', text: 'This is the fourth post')
+Post.create(user: User.first, title: 'Post 1', text: 'This is my first post')
+Post.create(user: User.first, title: 'Post 2', text: 'This is my second post')
+Post.create(user: User.first, title: 'Post 3', text: 'This is my third post')
+Post.create(user: User.first, title: 'Post 4', text: 'This is the fourth post')
 
 Comment.create(post: Post.first, user: User.second, text: '1 ')
 Comment.create(post: Post.first, user: User.second, text: '2 ')
