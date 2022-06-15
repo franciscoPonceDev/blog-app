@@ -1,5 +1,5 @@
 <% flash.each do |type, msg| %>
-<%= content_tag :div, msg, class: "#{type} alert" %>
+  <%= content_tag :div, msg, class: "#{type} alert" %>
 <% end %>
 <div class="post black-border">
   <div class="post-detailed">
@@ -7,18 +7,26 @@
     <p>Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></p>
   </div>
   <p><%= @post.text %></p>
-    <%= form_with url: "#{@post.id}/likes", method: :post do |form| %>
-      <%= form.submit "Like", class: 'like-btn' %>
+  <%= form_with url: "#{@post.id}/likes", method: :post do |form| %>
+    <%= form.submit "Like", class: 'like-btn' %>
+  <% end %>
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete', user_post_path(@user, @post), method: :delete, class: 'delete black-border' %>
+  <% end %>
+  <div>
+    <%= form_with url: "#{@post.id}/comments", scope: :comment, method: :post, class: 'comment-form' do |form| %>
+      <%= form.text_area :text, placeholder: 'Write a comment...', required: true, class: 'comment-txt' %>
+      <%= form.submit "Add comment", class: 'comment-btn' %>
     <% end %>
-<div>
-  <%= form_with url: "#{@post.id}/comments", scope: :comment, method: :post, class: 'comment-form' do |form| %>
-    <%= form.text_area :text, placeholder: 'Write a comment...', required: true, class: 'comment-txt' %>
-    <%= form.submit "Add comment", class: 'comment-btn' %> 
-  <% end %> 
-</div>
+  </div>
 </div>
 <ul class="post-comments black-border">
   <% @post.comments.each do |comment| %>
-    <li class="comment"><%= comment.user.name %>: <%= comment.text %></li>
+    <li class="comment">
+      <%= comment.user.name %>: <%= comment.text %>
+      <% if can? :destroy, comment %>
+        <%= button_to 'Delete', user_post_comment_path(comment.user, @post, comment ), method: :delete, class: 'delete black-border' %>
+      <% end %>
+    </li>
   <% end %>
 </ul>

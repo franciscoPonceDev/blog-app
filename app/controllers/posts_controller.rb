@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
   end
@@ -23,6 +25,13 @@ class PostsController < ApplicationController
       flash[:error] = 'Post not created!'
       redirect_to "/users/#{@user.id}/posts/new"
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'Post deleted!'
+    redirect_to root_path
   end
 
   private
