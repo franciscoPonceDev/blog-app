@@ -23,7 +23,7 @@ To get a local copy follow these simple example steps.
 
 2.- Install the project's dependencies by running this command:   
 `bundle install`  
-4.- Change the database configuration file (`database.yml`) to fit your local database's settings   
+4.- Make sure that you change the database configuration file (`database.yml`) to fit your local database's settings   
 5.- Start the server using this command:  
 `rails s`   
 6.- Open the browser at this address:  
